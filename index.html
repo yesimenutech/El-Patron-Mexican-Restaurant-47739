@@ -3,630 +3,551 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant – Mexican Food & Delivery</title>
+    <meta name="description" content="El Patron Mexican Restaurant - Authentic Mexican Food, Delivery & Catering in Denver, CO">
+    <meta name="keywords" content="Mexican Restaurant, Authentic Mexican Food, Delivery, Catering, Denver, Tacos, Burritos">
+    <meta name="author" content="El Patron Mexican Restaurant">
+    <title>El Patron Mexican Restaurant – Food & Delivery</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/yesimenutech/El-Patron-Mexican-Restaurant-47739/main/ElPatronMexRestLOGO.png" type="image/png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
     <style>
         /* Reset and Base Styles */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --color-primary: #d9a441;
-    --color-primary-hover: #c4922f;
-    --color-text-dark: #392f2b;
-    --color-text-light: #6b6b6b;
-    --color-white: #ffffff;
-    --color-background: #fbfbfa;
-    --color-footer: #2d2d2d;
-    --font-serif: 'PT Serif', Georgia, serif;
-    --font-sans: 'Open Sans', Arial, sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: var(--font-sans);
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--color-text-dark);
-    background-color: var(--color-background);
-    overflow-x: hidden;
-}
-
-.container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Navbar */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--color-white);
-    z-index: 1000;
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar-brand {
-    font-family: var(--font-sans);
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--color-text-dark);
-    letter-spacing: 0.5px;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-.nav-link {
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: var(--color-primary);
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-    color: var(--color-primary-hover);
-}
-
-.navbar-toggler {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-}
-
-.toggler-icon {
-    width: 25px;
-    height: 2px;
-    background-color: var(--color-text-dark);
-    transition: all 0.3s ease;
-}
-
-/* Hero Section */
-.hero {
-    position: relative;
-    height: 80vh;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('https://res.cloudinary.com/dbbjxhvz5/image/upload/v1777151404/yiebnrm6l10wizbcdbp2.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    color: var(--color-white);
-    padding: 0 20px;
-    max-width: 900px;
-}
-
-.hero-subtitle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    font-family: var(--font-sans);
-    font-size: 16px;
-    font-weight: 300;
-    margin-bottom: 20px;
-}
-
-.line-decoration {
-    width: 40px;
-    height: 2px;
-    background-color: var(--color-white);
-    opacity: 0.7;
-}
-
-.hero-title {
-    font-family: var(--font-serif);
-    font-size: 72px;
-    font-style: italic;
-    font-weight: 400;
-    margin-bottom: 40px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 3px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.btn-outline {
-    background: transparent;
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
-}
-
-.btn-outline:hover {
-    background: var(--color-primary);
-    color: var(--color-white);
-}
-
-.btn-filled {
-    background: var(--color-primary);
-    border: 2px solid var(--color-primary);
-    color: var(--color-white);
-}
-
-.btn-filled:hover {
-    background: var(--color-primary-hover);
-    border-color: var(--color-primary-hover);
-}
-
-/* Section Titles */
-.section-title {
-    font-family: var(--font-serif);
-    font-size: 36px;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--color-text-dark);
-    margin-bottom: 10px;
-}
-
-.section-title.centered {
-    text-align: center;
-}
-
-.section-subtitle-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 25px;
-}
-
-.section-subtitle-container.centered {
-    justify-content: center;
-}
-
-.line-small {
-    width: 30px;
-    height: 2px;
-    background-color: var(--color-primary);
-}
-
-.section-subtitle {
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--color-primary);
-}
-
-/* About Section */
-.about-section {
-    padding: 80px 0;
-    background-color: var(--color-background);
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: start;
-}
-
-.about-text p {
-    color: var(--color-text-light);
-    margin-bottom: 15px;
-    line-height: 1.8;
-}
-
-.about-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.about-image {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 3px;
-}
-
-/* Promo Section */
-.promo-section {
-    position: relative;
-    padding: 80px 0;
-    background-image: url('https://res.cloudinary.com/dbbjxhvz5/image/upload/v1777151404/yiebnrm6l10wizbcdbp2.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-.promo-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-}
-
-.promo-section .container {
-    position: relative;
-    z-index: 1;
-}
-
-.promo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.promo-card {
-    background: var(--color-white);
-    padding: 35px 30px;
-    border: 1px solid #e5e5e5;
-    text-align: left;
-}
-
-.promo-title {
-    font-family: var(--font-serif);
-    font-size: 26px;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--color-text-dark);
-    margin-bottom: 10px;
-}
-
-.promo-subtitle-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.promo-subtitle {
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--color-primary);
-}
-
-.promo-content p {
-    color: var(--color-text-light);
-    font-size: 15px;
-    margin-bottom: 8px;
-}
-
-.promo-price {
-    margin-top: 25px;
-    font-size: 15px;
-    color: var(--color-text-light);
-}
-
-.price-value {
-    font-family: var(--font-serif);
-    font-size: 32px;
-    font-style: italic;
-    color: var(--color-primary);
-}
-
-/* Gallery Section */
-.gallery-section {
-    padding: 80px 0;
-    background-color: var(--color-background);
-}
-
-/* Catering Section */
-.catering-section {
-    position: relative;
-    padding: 100px 0;
-    background-image: url('https://res.cloudinary.com/dbbjxhvz5/image/upload/v1777151404/yiebnrm6l10wizbcdbp2.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-.catering-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.catering-section .container {
-    position: relative;
-    z-index: 1;
-}
-
-.catering-box {
-    background: var(--color-white);
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 50px 60px;
-    text-align: center;
-}
-
-.catering-text {
-    color: var(--color-text-light);
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-/* Delivery Section */
-.delivery-section {
-    padding: 80px 0;
-    background-color: var(--color-background);
-}
-
-.delivery-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.delivery-text p {
-    color: var(--color-text-light);
-    margin-bottom: 15px;
-    line-height: 1.8;
-}
-
-.delivery-image-container {
-    position: relative;
-}
-
-.delivery-image {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 3px;
-}
-
-/* Footer */
-.site-footer {
-    background-color: var(--color-footer);
-    padding: 60px 0;
-    color: #9a9a9a;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.footer-title {
-    font-family: var(--font-serif);
-    font-size: 20px;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--color-white);
-    margin-bottom: 15px;
-}
-
-.footer-col p {
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-/* Responsive Styles */
-@media (max-width: 992px) {
-    .hero-title {
-        font-size: 56px;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .about-images {
-        order: -1;
-    }
-
-    .promo-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .delivery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .delivery-image-container {
-        order: -1;
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar-toggler {
-        display: flex;
-    }
-
-    .nav-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background-color: var(--color-white);
-        padding: 20px;
-        gap: 15px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-    }
-
-    .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .hero-title {
-        font-size: 42px;
-    }
-
-    .hero-subtitle {
-        font-size: 14px;
-    }
-
-    .line-decoration {
-        width: 25px;
-    }
-
-    .promo-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .catering-box {
-        padding: 35px 25px;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 32px;
-    }
-
-    .section-title {
-        font-size: 28px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn {
-        width: 100%;
-        max-width: 250px;
-        text-align: center;
-    }
-
-    .about-images {
-        grid-template-columns: 1fr;
-    }
-
-    .about-image {
-        height: 250px;
-    }
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero-content {
-    animation: fadeInUp 1s ease-out;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--color-primary);
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--color-primary-hover);
-}
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Rustic Brown Color Palette */
+            --color-primary: #a0522d; /* Sienna / Rustic Brown */
+            --color-primary-hover: #8b4513; /* SaddleBrown */
+            --color-text-dark: #3e2723; /* Deep dark brown */
+            --color-text-light: #5d4037; /* Muted warm brown */
+            --color-white: #ffffff;
+            --color-background: #fdf8f5; /* Warm rustic background */
+            --color-footer: #2d1b15; /* Dark brown footer */
+            --font-serif: 'PT Serif', Georgia, serif;
+            --font-sans: 'Open Sans', Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--color-text-dark);
+            background-color: var(--color-background);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--color-white);
+            z-index: 1000;
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            max-height: 120px; /* Adjust logo size */
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-primary-hover);
+        }
+
+        .navbar-toggler {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .toggler-icon {
+            width: 25px;
+            height: 2px;
+            background-color: var(--color-text-dark);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://res.cloudinary.com/dbbjxhvz5/image/upload/v1777151404/yiebnrm6l10wizbcdbp2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin-top: 75px; /* Offset for fixed navbar */
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(45, 27, 21, 0.5); /* Warmer dark overlay */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: var(--color-white);
+            padding: 0 20px;
+            max-width: 900px;
+        }
+
+        .hero-subtitle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-family: var(--font-sans);
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .line-decoration {
+            width: 40px;
+            height: 2px;
+            background-color: var(--color-white);
+            opacity: 0.7;
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: 72px;
+            font-style: italic;
+            font-weight: 400;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 36px;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--color-text-dark);
+            margin-bottom: 10px;
+        }
+
+        .section-title.centered {
+            text-align: center;
+        }
+
+        .section-subtitle-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .section-subtitle-container.centered {
+            justify-content: center;
+        }
+
+        .line-small {
+            width: 30px;
+            height: 2px;
+            background-color: var(--color-primary);
+        }
+
+        .section-subtitle {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--color-primary);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            background-color: var(--color-background);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--color-text-light);
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .about-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Rustic shadow */
+        }
+
+        /* Promo Section */
+        .promo-section {
+            position: relative;
+            padding: 80px 0;
+            background-image: url('https://res.cloudinary.com/dbbjxhvz5/image/upload/v1777151404/yiebnrm6l10wizbcdbp2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .promo-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(45, 27, 21, 0.65);
+        }
+
+        .promo-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .promo-card {
+            background: var(--color-white);
+            padding: 35px 30px;
+            border: 1px solid #e2d5c8;
+            border-top: 4px solid var(--color-primary); /* Rustic border top */
+            text-align: left;
+            border-radius: 4px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .promo-title {
+            font-family: var(--font-serif);
+            font-size: 26px;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--color-text-dark);
+            margin-bottom: 10px;
+        }
+
+        .promo-subtitle-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .promo-subtitle {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--color-primary);
+        }
+
+        .promo-content p {
+            color: var(--color-text-light);
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .promo-price {
+            margin-top: 25px;
+            font-size: 15px;
+            color: var(--color-text-light);
+        }
+
+        .price-value {
+            font-family: var(--font-serif);
+            font-size: 32px;
+            font-style: italic;
+            color: var(--color-primary);
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 80px 0;
+            background-color: var(--color-background);
+        }
+
+        /* Catering Section */
+        .catering-section {
+            position: relative;
+            padding: 100px 0;
+            background-image: url('https://res.cloudinary.com/dbbjxhvz5/image/upload/v1777151404/yiebnrm6l10wizbcdbp2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .catering-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(45, 27, 21, 0.6);
+        }
+
+        .catering-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .catering-box {
+            background: var(--color-white);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 60px;
+            text-align: center;
+            border-radius: 4px;
+            border-bottom: 4px solid var(--color-primary);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+        }
+
+        .catering-text {
+            color: var(--color-text-light);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* Delivery Section */
+        .delivery-section {
+            padding: 80px 0;
+            background-color: var(--color-background);
+        }
+
+        .delivery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .delivery-text p {
+            color: var(--color-text-light);
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .delivery-image-container {
+            position: relative;
+        }
+
+        .delivery-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: var(--color-footer);
+            padding: 60px 0;
+            color: #d7ccc8; /* Warm light text */
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--color-white);
+            margin-bottom: 15px;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 5px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-title { font-size: 56px; }
+            .about-grid { grid-template-columns: 1fr; }
+            .about-images { order: -1; }
+            .promo-grid { grid-template-columns: repeat(2, 1fr); }
+            .delivery-grid { grid-template-columns: 1fr; }
+            .delivery-image-container { order: -1; }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-toggler { display: flex; }
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: var(--color-white);
+                padding: 20px;
+                gap: 15px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                align-items: flex-start;
+            }
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            .hero-title { font-size: 42px; }
+            .hero-subtitle { font-size: 14px; }
+            .line-decoration { width: 25px; }
+            .promo-grid { grid-template-columns: 1fr; }
+            .catering-box { padding: 35px 25px; }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            #social-icons {
+                justify-content: center !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 32px; }
+            .section-title { font-size: 28px; }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .about-images { grid-template-columns: 1fr; }
+            .about-image { height: 250px; }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--color-background); }
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-primary);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover { background: var(--color-primary-hover); }
 
     </style>
-<script>window.MENU_TECH_STATE = {"lang":"en","showReservations":true,"cuid":"5766b4f2-3443-4122-8717-6ce1d9a4edfb","ruid":"94dafba8-7893-4d8f-824e-084bfbf4551e","title":"El Patron Mexican Restaurant","heroImg":"https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171191/ej8mcx2lsp5y4v3gikuy.jpg","aboutImg1":"https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171400/qtv7tkddsbqftsaids8h.png","aboutImg2":"https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171404/iauxek6k2habiutr1pvj.png","promoBg":"https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171427/wgi4dqt4ymkqa9mnaqh0.jpg","cateringBg":"https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171944/ffp6wmvjplf8cry2zmgk.png","deliveryImg":"https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778172531/j77wpvavb19y4uciiue5.png","gallery":["https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171513/wntstmkiurvlpbn2tm8v.jpg","https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171514/s7oegxqjngkxxklnjthq.png","https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171514/ff162rcfowepyjs5cz90.png","https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171517/huazoingbewof4mhyivz.jpg","https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171518/phklkvtmu0n1thm7pn63.jpg","https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171518/b1rz9cwio60vfdxyeqse.jpg","https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171519/fbelqwi2cbu2nphnmvue.jpg","https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171520/mz3ajlsvqofbcsd5evro.jpg","https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778172600/zwcylllhzvfi4j8vwjdr.png"],"contact":{"phone":"720-374-2232","address":"4630 Peoria St, Denver, CO 80239","hours":"Monday – Thursday: 7:00 AM – 9:00 PM Friday: 7:00 AM – 10:30 PM Saturday: 9:00 AM – 10:30 PM Sunday: 9:00 AM – 9:00 PM"},"socials":[{"platform":"instagram","url":"https://www.instagram.com/elpatron_mexicanrest/"},{"platform":"facebook","url":"https://www.facebook.com/elpatronmexicanrestaurantdenver"},{"platform":"instagram","url":"https://www.tiktok.com/@elpatron_mexicanrest?lang=en"}],"paragraphs":{"about":"\"For more than 20 years, El Patron Mexican Restaurant has served amazing homemade Mexican cuisine. You’ll find authentic food, great customer ﻿service, and big plates. We are family owned and open late. Our customers are very valuable to us and we're always here to fulfill your food desires. Denver is known for delicious cuisines from different parts of the world. Out of many type of restaurants, a good Denver Mexican restaurant always stands out of the crowd. We’ve been recognized by Talk of the Town Colorado -- 4 stars as rated by customers online (2010) and Rocky Mountain news ﻿August 2008. We specialize in dining, takeout, catering, and bar service.\"","promo":"","catering":"Experience the true taste of Mexico with our traditional recipes, homemade dishes, and fresh ingredients. From tacos and burritos to enchiladas and sizzling fajitas, every plate is prepared with authentic flavor and passion.","delivery":"El Patron is proudly family owned and operated. We believe every customer should feel at home from the moment they walk through our doors. Our team works hard every day to provide warm hospitality and quality food you can always count on."},"titles":{"about-title":"We are El Patron Mexican Restaurant","about-subtitle":"About Us","promo1-title":"","promo1-subtitle":"","promo2-title":"","promo2-subtitle":"","promo3-title":"","promo3-subtitle":"","gallery-title":"Delicious Mexican Food","gallery-subtitle":"Love At First Bite","catering-title":"","catering-subtitle":"","delivery-title":"El Patron Mexican Restaurant","delivery-subtitle":""}};</script>
+    <script>
+        window.MENU_TECH_STATE = {"lang":"en","showReservations":true,"cuid":"5766b4f2-3443-4122-8717-6ce1d9a4edfb","ruid":"94dafba8-7893-4d8f-824e-084bfbf4551e","title":"El Patron Mexican Restaurant","heroImg":"https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171191/ej8mcx2lsp5y4v3gikuy.jpg","aboutImg1":"https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171400/qtv7tkddsbqftsaids8h.png","aboutImg2":"https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171404/iauxek6k2habiutr1pvj.png","promoBg":"https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171427/wgi4dqt4ymkqa9mnaqh0.jpg","cateringBg":"https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171944/ffp6wmvjplf8cry2zmgk.png","deliveryImg":"https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778172531/j77wpvavb19y4uciiue5.png","gallery":["https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171513/wntstmkiurvlpbn2tm8v.jpg","https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171514/s7oegxqjngkxxklnjthq.png","https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171514/ff162rcfowepyjs5cz90.png","https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171517/huazoingbewof4mhyivz.jpg","https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171518/phklkvtmu0n1thm7pn63.jpg","https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171518/b1rz9cwio60vfdxyeqse.jpg","https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171519/fbelqwi2cbu2nphnmvue.jpg","https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778171520/mz3ajlsvqofbcsd5evro.jpg","https://res.cloudinary.com/dbbjxhvz5/image/upload/v1778172600/zwcylllhzvfi4j8vwjdr.png"],"contact":{"phone":"720-374-2232","address":"4630 Peoria St, Denver, CO 80239","hours":"Monday – Thursday: 7:00 AM – 9:00 PM \nFriday: 7:00 AM – 10:30 PM \nSaturday: 9:00 AM – 10:30 PM \nSunday: 9:00 AM – 9:00 PM"},"socials":[{"platform":"instagram","url":"https://www.instagram.com/elpatron_mexicanrest/"},{"platform":"facebook","url":"https://www.facebook.com/elpatronmexicanrestaurantdenver"},{"platform":"tiktok","url":"https://www.tiktok.com/@elpatron_mexicanrest?lang=en"}],"paragraphs":{"about":"\"For more than 20 years, El Patron Mexican Restaurant has served amazing homemade Mexican cuisine. You’ll find authentic food, great customer service, and big plates. We are family owned and open late. Our customers are very valuable to us and we're always here to fulfill your food desires. Denver is known for delicious cuisines from different parts of the world. Out of many type of restaurants, a good Denver Mexican restaurant always stands out of the crowd. We’ve been recognized by Talk of the Town Colorado -- 4 stars as rated by customers online (2010) and Rocky Mountain news August 2008. We specialize in dining, takeout, catering, and bar service.\"","promo":"","catering":"Experience the true taste of Mexico with our traditional recipes, homemade dishes, and fresh ingredients. From tacos and burritos to enchiladas and sizzling fajitas, every plate is prepared with authentic flavor and passion.","delivery":"El Patron is proudly family owned and operated. We believe every customer should feel at home from the moment they walk through our doors. Our team works hard every day to provide warm hospitality and quality food you can always count on."},"titles":{"about-title":"We are El Patron Mexican Restaurant","about-subtitle":"About Us","promo1-title":"","promo1-subtitle":"","promo2-title":"","promo2-subtitle":"","promo3-title":"","promo3-subtitle":"","gallery-title":"Delicious Mexican Food","gallery-subtitle":"Love At First Bite","catering-title":"Catering","catering-subtitle":"Party Time","delivery-title":"El Patron Mexican Restaurant","delivery-subtitle":"Get Served Like a King"}};</script>
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="#" class="navbar-brand" id="nav-brand">Template Menutech</a>
+            <a href="#" class="navbar-brand" id="nav-brand">
+                <img src="https://raw.githubusercontent.com/yesimenutech/El-Patron-Mexican-Restaurant-47739/main/ElPatronMexRestLOGO.png" alt="El Patron Mexican Restaurant">
+            </a>
             <button class="navbar-toggler" id="navbar-toggler" aria-label="Toggle navigation">
                 <span class="toggler-icon"></span>
                 <span class="toggler-icon"></span>
@@ -634,41 +555,37 @@ a {
             </button>
             <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">Home</a>
+                    <a href="#" class="nav-link active" data-en="Home" data-es="Inicio">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Blog</a>
+                    <a href="#" class="nav-link" data-en="Blog" data-es="Blog">Blog</a>
                 </li>
-                <li class="nav-item" style="display: flex; align-items: center; gap: 10px; margin-left: 10px; border-left: 1px solid #eee; padding-left: 20px;">
-                    <span id="lang-es" style="cursor: pointer; font-weight: 700; color: var(--color-primary); font-size: 12px;">ES</span>
-                    <span style="color: #eee;">|</span>
-                    <span id="lang-en" style="cursor: pointer; font-weight: 400; color: #999; font-size: 12px;">EN</span>
+                <li class="nav-item" style="display: flex; align-items: center; gap: 10px; margin-left: 10px; border-left: 1px solid #e2d5c8; padding-left: 20px;">
+                    <span id="lang-es" style="cursor: pointer; font-weight: 700; color: var(--color-primary); font-size: 13px;">ES</span>
+                    <span style="color: #e2d5c8;">|</span>
+                    <span id="lang-en" style="cursor: pointer; font-weight: 400; color: #999; font-size: 13px;">EN</span>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header class="hero" id="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h2 class="hero-subtitle">
                 <span></span>
             </h2>
-            <h1 class="hero-title" id="hero-title">Template Menutech</h1>
+            <h1 class="hero-title" id="hero-title" data-en="El Patron Mexican Restaurant" data-es="El Patrón Mexican Restaurant">El Patron Mexican Restaurant</h1>
             <div class="hero-buttons">
-                <!-- 1. Script Motor Menutech -->
                 <script src="https://www.fbgcdn.com/embedder/js/ewm2.js"></script>
 
-                <!-- 2. Librería Menutech -->
                 <script src="https://menutech.xyz/menutechUI.min.js"></script>
 
-                <!-- 3. Botones Personalizados -->
                 <menutech-orders
                 id="hero-orders"
                 cuid="5766b4f2-3443-4122-8717-6ce1d9a4edfb"
                 ruid="94dafba8-7893-4d8f-824e-084bfbf4551e"
-                background="#f2a04a"
+                background="#a0522d"
                 color="#ffffff"
                 data-glf-cuid="5766b4f2-3443-4122-8717-6ce1d9a4edfb"
                 data-glf-ruid="94dafba8-7893-4d8f-824e-084bfbf4551e">
@@ -679,7 +596,7 @@ a {
                     id="hero-reservations"
                     cuid="5766b4f2-3443-4122-8717-6ce1d9a4edfb"
                     ruid="94dafba8-7893-4d8f-824e-084bfbf4551e"
-                    background="#2f4854"
+                    background="#3e2723"
                     color="#ffffff"
                     data-glf-cuid="5766b4f2-3443-4122-8717-6ce1d9a4edfb"
                     data-glf-ruid="94dafba8-7893-4d8f-824e-084bfbf4551e"
@@ -687,7 +604,6 @@ a {
                     </menutech-reservations>
                 </div>
 
-                <!-- 4. Forzar vinculación (Opcional si no abre a la primera) -->
                 <script>
                 setTimeout(() => { if(window.glfBindButtons) window.glfBindButtons(); }, 1000);
                 </script>
@@ -695,87 +611,84 @@ a {
         </div>
     </header>
 
-    <!-- About Us Section -->
     <section class="about-section">
         <div class="container">
             <div class="about-grid">
                 <div class="about-text">
-                    <h2 class="section-title" id="about-title">We are Pronto Mexican Food</h2>
+                    <h2 class="section-title" id="about-title" data-en="We are El Patron Mexican Restaurant" data-es="Somos El Patrón Mexican Restaurant">We are El Patron Mexican Restaurant</h2>
                     <span class="section-subtitle-container">
                         <span class="line-small"></span>
-                        <span class="section-subtitle" id="about-subtitle">About Us</span>
+                        <span class="section-subtitle" id="about-subtitle" data-en="About Us" data-es="Sobre Nosotros">About Us</span>
                     </span>
-                    <p id="about-p1">At Restaurant Pronto, we take pride in bringing our guests vibrant and authentic Mexican cuisine, crafted with care and rich culinary tradition. Every dish we serve is full of bold flavors and prepared to deliver a memorable dining experience. We are confident you will leave satisfied.</p>
-                    <p id="about-p2">The secret to our success is simple: creating exceptional meals using fresh, high-quality ingredients that capture the true essence of Mexican cooking in every bite.</p>
-                    <p id="about-p3">Our mission is to help you savor the moments that truly matter. Enjoy great food. Sip on a refreshing drink. And above all, unwind and feel at home. We sincerely appreciate your continued support and trust</p>
+                    <p id="about-p1" data-en="For more than 20 years, El Patron Mexican Restaurant has served amazing homemade Mexican cuisine. You’ll find authentic food, great customer service, and big plates. We are family owned and open late. Our customers are very valuable to us and we're always here to fulfill your food desires. Denver is known for delicious cuisines from different parts of the world. Out of many type of restaurants, a good Denver Mexican restaurant always stands out of the crowd. We’ve been recognized by Talk of the Town Colorado -- 4 stars as rated by customers online (2010) and Rocky Mountain news August 2008. We specialize in dining, takeout, catering, and bar service." data-es="Durante más de 20 años, El Patrón Mexican Restaurant ha servido increíble cocina casera mexicana. Encontrarás comida auténtica, excelente servicio al cliente y platillos bien servidos. Somos una empresa familiar y abrimos hasta tarde. Nuestros clientes son muy valiosos para nosotros y siempre estamos aquí para satisfacer tus antojos. Denver es conocido por sus deliciosas cocinas de diferentes partes del mundo. Entre muchos tipos de restaurantes, un buen restaurante mexicano en Denver siempre destaca. Hemos sido reconocidos por Talk of the Town Colorado -- 4 estrellas calificadas por clientes en línea (2010) y Rocky Mountain news en agosto de 2008. Nos especializamos en servicio de restaurante, comida para llevar, catering y servicio de bar.">For more than 20 years, El Patron Mexican Restaurant has served amazing homemade Mexican cuisine...</p>
+                    <p id="about-p2" data-en="" data-es=""></p>
+                    <p id="about-p3" data-en="" data-es=""></p>
                 </div>
                 <div class="about-images">
-                    <img id="about-img-1" src="https://res.cloudinary.com/dbbjxhvz5/image/upload/v1777151404/yiebnrm6l10wizbcdbp2.jpg" alt="Grilled Salmon" class="about-image">
-                    <img id="about-img-2" src="https://res.cloudinary.com/dbbjxhvz5/image/upload/v1777151404/yiebnrm6l10wizbcdbp2.jpg" alt="Caprese Salad" class="about-image">
+                    <img id="about-img-1" src="https://res.cloudinary.com/dbbjxhvz5/image/upload/v1777151404/yiebnrm6l10wizbcdbp2.jpg" alt="Mexican Food 1" class="about-image">
+                    <img id="about-img-2" src="https://res.cloudinary.com/dbbjxhvz5/image/upload/v1777151404/yiebnrm6l10wizbcdbp2.jpg" alt="Mexican Food 2" class="about-image">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Promo Cards Section -->
     <section class="promo-section" id="promo-section">
         <div class="promo-overlay"></div>
         <div class="container">
             <div class="promo-grid">
                 <div class="promo-card">
-                    <h3 class="promo-title" id="promo1-title">Best Friends Deal</h3>
+                    <h3 class="promo-title" id="promo1-title" data-en="Best Friends Deal" data-es="Oferta Mejores Amigos">Best Friends Deal</h3>
                     <span class="promo-subtitle-container">
                         <span class="line-small"></span>
-                        <span class="promo-subtitle" id="promo1-subtitle">Sharing Is Caring</span>
+                        <span class="promo-subtitle" id="promo1-subtitle" data-en="Sharing Is Caring" data-es="Compartir es Querer">Sharing Is Caring</span>
                     </span>
                     <div class="promo-content">
-                        <p id="promo1-p1">2 Medium Pizzas</p>
-                        <p id="promo1-p2">Soft Drinks</p>
-                        <p id="promo1-p3">Garlic Bread or Patato Wedges</p>
-                        <p id="promo1-p4">Salad to share</p>
+                        <p id="promo1-p1" data-en="2 Medium Pizzas" data-es="2 Pizzas Medianas">2 Medium Pizzas</p>
+                        <p id="promo1-p2" data-en="Soft Drinks" data-es="Bebidas">Soft Drinks</p>
+                        <p id="promo1-p3" data-en="Garlic Bread or Patato Wedges" data-es="Pan de Ajo o Papas">Garlic Bread or Patato Wedges</p>
+                        <p id="promo1-p4" data-en="Salad to share" data-es="Ensalada para compartir">Salad to share</p>
                     </div>
                     <div class="promo-price">
-                        Only <span class="price-value">$20</span>
+                        <span data-en="Only" data-es="Solo">Only</span> <span class="price-value">$20</span>
                     </div>
                 </div>
                 <div class="promo-card">
-                    <h3 class="promo-title" id="promo2-title">Buy 1 Get 1 FREE</h3>
+                    <h3 class="promo-title" id="promo2-title" data-en="Buy 1 Get 1 FREE" data-es="Compra 1 y llévate 1 GRATIS">Buy 1 Get 1 FREE</h3>
                     <span class="promo-subtitle-container">
                         <span class="line-small"></span>
-                        <span class="promo-subtitle" id="promo2-subtitle">This Week Only</span>
+                        <span class="promo-subtitle" id="promo2-subtitle" data-en="This Week Only" data-es="Solo Esta Semana">This Week Only</span>
                     </span>
                     <div class="promo-content">
-                        <p id="promo2-p1">Hope you are hungry. Buy one regular priced pizza online and get a second pizza totally free!</p>
-                        <p id="promo2-p2">Online only!</p>
+                        <p id="promo2-p1" data-en="Hope you are hungry. Buy one regular priced item online and get a second totally free!" data-es="Espero que tengas hambre. ¡Compra un artículo a precio regular en línea y llévate el segundo totalmente gratis!">Hope you are hungry. Buy one regular priced item online and get a second totally free!</p>
+                        <p id="promo2-p2" data-en="Online only!" data-es="¡Solo en línea!">Online only!</p>
                     </div>
                     <div class="promo-price">
-                        Order code: <span class="price-value">7867</span>
+                        <span data-en="Order code:" data-es="Código de orden:">Order code:</span> <span class="price-value">7867</span>
                     </div>
                 </div>
                 <div class="promo-card">
-                    <h3 class="promo-title" id="promo3-title">Awesome Foursome</h3>
+                    <h3 class="promo-title" id="promo3-title" data-en="Awesome Foursome" data-es="Paquete Cuarteto">Awesome Foursome</h3>
                     <span class="promo-subtitle-container">
                         <span class="line-small"></span>
-                        <span class="promo-subtitle" id="promo3-subtitle">Sundays Only</span>
+                        <span class="promo-subtitle" id="promo3-subtitle" data-en="Sundays Only" data-es="Solo Domingos">Sundays Only</span>
                     </span>
                     <div class="promo-content">
-                        <p id="promo3-p1">6 Delicious regular size pizzas to choose from: Margherita, Capricciosa, Prosciutto e Funghi, Diavola, Calzone, Primavera.</p>
+                        <p id="promo3-p1" data-en="Special platters to share with your family and friends." data-es="Platillos especiales para compartir con tu familia y amigos.">Special platters to share with your family and friends.</p>
                     </div>
                     <div class="promo-price">
-                        Only <span class="price-value">$40</span>
+                        <span data-en="Only" data-es="Solo">Only</span> <span class="price-value">$40</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Delicious Mexican Food Section -->
     <section class="gallery-section">
         <div class="container">
-            <h2 class="section-title centered" id="gallery-title" data-es="Deliciosa Comida Mexicana" data-en="Delicious Mexican Food">Delicious Mexican Food</h2>
+            <h2 class="section-title centered" id="gallery-title" data-en="Delicious Mexican Food" data-es="Deliciosa Comida Mexicana">Delicious Mexican Food</h2>
             <span class="section-subtitle-container centered">
                 <span class="line-small"></span>
-                <span class="section-subtitle" id="gallery-subtitle" data-es="Amor al Primer Bocado" data-en="Love At First Bite">Love At First Bite</span>
+                <span class="section-subtitle" id="gallery-subtitle" data-en="Love At First Bite" data-es="Amor al Primer Bocado">Love At First Bite</span>
             </span>
             <style>
                 #gallery-container {
@@ -789,7 +702,8 @@ a {
                     width: calc(33.333% - 14px);
                     aspect-ratio: 1 / 1;
                     object-fit: cover;
-                    border-radius: 3px;
+                    border-radius: 4px;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
                 }
                 @media (max-width: 768px) {
                     .gallery-img {
@@ -798,63 +712,63 @@ a {
                 }
             </style>
             <div id="gallery-container">
-                <!-- Menutech creacion de gallery -->
-            </div>
+                </div>
         </div>
     </section>
 
-    <!-- Catering Section -->
     <section class="catering-section" id="catering-section">
         <div class="catering-overlay"></div>
         <div class="container">
             <div class="catering-box">
-                <h2 class="section-title centered" id="catering-title">Catering</h2>
                 <span class="section-subtitle-container centered">
                     <span class="line-small"></span>
-                    <span class="section-subtitle" id="catering-subtitle">Party Time</span>
+                    <span class="section-subtitle" id="catering-subtitle" data-en="Party Time" data-es="Hora de Fiesta"></span>
                 </span>
-                <p id="catering-p1" class="catering-text">Restaurant Pronto can cater to any party or event irrespective of how big or small. We specialize in catering with personalised service and special menus on request. In our menu palette, you'll discover unique and sophisticated tastes - all of which will help you uncover the true greatness of the mexican restaurant.</p>
-                <p id="catering-p2" class="catering-text">Tell us about your event at office@pronto-wp.com</p>
+                <p id="catering-p1" class="catering-text" data-en="Experience the true taste of Mexico with our traditional recipes, homemade dishes, and fresh ingredients. From tacos and burritos to enchiladas and sizzling fajitas, every plate is prepared with authentic flavor and passion." data-es="Experimenta el verdadero sabor de México con nuestras recetas tradicionales, platillos caseros e ingredientes frescos. Desde tacos y burritos hasta enchiladas y fajitas calientes, cada plato está preparado con auténtico sabor y pasión.">Experience the true taste of Mexico with our traditional recipes...</p>
+                <p id="catering-p2" class="catering-text" data-en="" data-es=""></p>
             </div>
         </div>
     </section>
 
-    <!-- Food Delivery Section -->
     <section class="delivery-section">
         <div class="container">
             <div class="delivery-grid">
                 <div class="delivery-text">
-                    <h2 class="section-title" id="delivery-title">Food Delivery in NY</h2>
+                    <h2 class="section-title" id="delivery-title" data-en="El Patron Mexican Restaurant" data-es="El Patrón Mexican Restaurant">El Patron Mexican Restaurant</h2>
                     <span class="section-subtitle-container">
                         <span class="line-small"></span>
-                        <span class="section-subtitle" id="delivery-subtitle">Get Served Like a King</span>
+                        <span class="section-subtitle" id="delivery-subtitle" data-en="Get Served Like a King" data-es="Siéntete como un Rey">Get Served Like a King</span>
                     </span>
-                    <p id="delivery-p1">Looking for food delivery nearby? Not everybody knows or has the time to prepare tasty food.</p>
-                    <p id="delivery-p2">When you want to get served like a king then food delivery from restaurant Pronto will be your best choice.</p>
-                    <p id="delivery-p3">Simply select "Delivery" at the checkout screen and we hope you'll appreciate our food delivery service.</p>
+                    <p id="delivery-p1" data-en="El Patron is proudly family owned and operated. We believe every customer should feel at home from the moment they walk through our doors. Our team works hard every day to provide warm hospitality and quality food you can always count on." data-es="El Patrón se enorgullece de ser propiedad y operación familiar. Creemos que cada cliente debe sentirse como en casa desde el momento en que cruza nuestras puertas. Nuestro equipo trabaja duro todos los días para brindar una cálida hospitalidad y comida de calidad con la que siempre puedes contar.">El Patron is proudly family owned and operated. We believe every customer should feel at home...</p>
+                    <p id="delivery-p2" data-en="" data-es=""></p>
+                    <p id="delivery-p3" data-en="" data-es=""></p>
                 </div>
                 <div class="delivery-image-container">
-                    <img id="delivery-image" src="https://res.cloudinary.com/dbbjxhvz5/image/upload/v1777151404/yiebnrm6l10wizbcdbp2.jpg" alt="Pizza Delivery" class="delivery-image">
+                    <img id="delivery-image" src="https://res.cloudinary.com/dbbjxhvz5/image/upload/v1777151404/yiebnrm6l10wizbcdbp2.jpg" alt="Delivery" class="delivery-image">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4 class="footer-title" data-es="Contáctanos" data-en="Contact Us">Contact Us</h4>
-                    <p id="footer-address">100 Tenth Avenue, New York City, NY 1001</p>
-                    <p id="footer-phone">Phone: (044) 359 0173</p>
-                    <div id="social-icons" style="margin-top: 20px; display: flex; gap: 15px;">
-                        <!-- Social Networks dynamically added here -->
-                    </div>
+                    <p id="footer-address" data-en="4630 Peoria St, Denver, CO 80239" data-es="4630 Peoria St, Denver, CO 80239">4630 Peoria St, Denver, CO 80239</p>
+                    <p id="footer-phone" data-en="Phone: 720-374-2232" data-es="Teléfono: 720-374-2232">720-374-2232</p>
+                    
+                    <div id="social-icons" style="margin-top: 15px; display: flex; align-items: center; gap: 15px;">
+                        </div>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-title" data-es="Horarios" data-en="Opening Hours">Opening Hours</h4>
-                    <p id="footer-hours">Monday - Sunday: 5PM - 10PM</p>
+                    <p id="footer-hours" style="white-space: pre-line;" data-en="Monday – Thursday: 7:00 AM – 9:00 PM&#10;Friday: 7:00 AM – 10:30 PM&#10;Saturday: 9:00 AM – 10:30 PM&#10;Sunday: 9:00 AM – 9:00 PM" data-es="Lunes – Jueves: 7:00 AM – 9:00 PM&#10;Viernes: 7:00 AM – 10:30 PM&#10;Sábado: 9:00 AM – 10:30 PM&#10;Domingo: 9:00 AM – 9:00 PM">
+                        Monday – Thursday: 7:00 AM – 9:00 PM
+                        Friday: 7:00 AM – 10:30 PM
+                        Saturday: 9:00 AM – 10:30 PM
+                        Sunday: 9:00 AM – 9:00 PM
+                    </p>
                 </div>
             </div>
         </div>
@@ -866,28 +780,35 @@ a {
             instagram: `<svg style="width:24px;height:24px;fill:currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>`,
             facebook: `<svg style="width:24px;height:24px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg>`,
             whatsapp: `<svg style="width:24px;height:24px;fill:currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.81 9.81 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.22 8.22 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.44 0-2.85-.38-4.1-1.11l-.29-.17-3.06.81.82-2.98-.19-.3a8.22 8.22 0 0 1-1.26-4.48c0-4.54 3.7-8.23 8.24-8.23m-3.85 3.09c-.21 0-.45.03-.66.24-.21.21-.81.79-.81 1.94s.84 2.25.96 2.41c.12.16 1.63 2.49 3.96 3.5.55.24 1 .38 1.34.49.56.18 1.07.15 1.48.09.45-.06 1.39-.57 1.58-1.12.2-.55.2-1.02.14-1.12-.06-.1-.21-.16-.45-.27-.24-.12-1.39-.69-1.61-.77-.22-.08-.37-.12-.53.12-.16.24-.61.77-.75.93-.14.16-.27.18-.51.06-.24-.12-.99-.36-1.89-1.16-.7-.62-1.17-1.39-1.31-1.63-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.15.16-.25.24-.42.08-.17.04-.32-.02-.45-.06-.13-.53-1.28-.73-1.75-.19-.48-.39-.41-.53-.42l-.44-.01Z"/></svg>`,
-            twitter: `<svg style="width:24px;height:24px;fill:currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98-3.56-.18-6.73-1.89-8.84-4.48-.37.63-.58 1.37-.58 2.15 0 1.48.75 2.78 1.89 3.55-.7 0-1.36-.21-1.94-.53v.05c0 2.05 1.45 3.78 3.39 4.17-.36.1-.74.15-1.13.15-.27 0-.54-.03-.8-.08.54 1.68 2.11 2.9 3.97 2.93-1.46 1.14-3.29 1.82-5.3 1.82-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23Z"/></svg>`
+            twitter: `<svg style="width:24px;height:24px;fill:currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98-3.56-.18-6.73-1.89-8.84-4.48-.37.63-.58 1.37-.58 2.15 0 1.48.75 2.78 1.89 3.55-.7 0-1.36-.21-1.94-.53v.05c0 2.05 1.45 3.78 3.39 4.17-.36.1-.74.15-1.13.15-.27 0-.54-.03-.8-.08.54 1.68 2.11 2.9 3.97 2.93-1.46 1.14-3.29 1.82-5.3 1.82-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23Z"/></svg>`,
+            tiktok: `<svg style="width:24px;height:24px;fill:currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.47-.13 3.1-.12 6.22-.12 9.33 0 1.23-.2 2.48-.75 3.57-.96 1.94-2.9 3.25-5.02 3.52-1.93.26-4.04-.15-5.61-1.33-1.68-1.25-2.61-3.32-2.38-5.39.14-1.39.75-2.73 1.75-3.69 1.11-1.07 2.64-1.68 4.16-1.74.01 1.44.02 2.87.02 4.31-.83.05-1.69.32-2.33.86-.71.6-.1.1.02.1-.98 1.05-.72 2.8.53 3.53.53.31 1.14.43 1.75.4.9-.03 1.75-.41 2.33-1.09.61-.7.83-1.65.81-2.58-.01-4.73-.01-9.45-.01-14.18.17 0 .34 0 .5 0z"/></svg>`
         };
 
-        let currentLang = 'es';
+        let currentLang = 'en';
 
+        // Función de traducción centralizada. Reemplaza el texto usando los atributos data-es y data-en.
         function applyLanguage(lang) {
             currentLang = lang;
-            document.querySelectorAll('[data-es]').forEach(el => {
-                el.textContent = el.getAttribute(`data-${lang}`);
+            
+            // Traduce TODOS los elementos que contengan los atributos data-es y data-en
+            document.querySelectorAll('[data-en][data-es]').forEach(el => {
+                const translatedText = el.getAttribute(`data-${lang}`);
+                if (translatedText !== null) {
+                    el.innerHTML = translatedText; // Se usa innerHTML por si el texto tiene saltos de linea como las horas
+                }
             });
 
-            // Update switch UI
+            // Actualiza estilos visuales de los botones de traducción
             const esBtn = document.getElementById('lang-es');
             const enBtn = document.getElementById('lang-en');
             if (!esBtn || !enBtn) return;
 
             if (lang === 'es') {
                 esBtn.style.fontWeight = '700'; esBtn.style.color = 'var(--color-primary)';
-                enBtn.style.fontWeight = '400'; enBtn.style.color = '#999';
+                enBtn.style.fontWeight = '400'; enBtn.style.color = '#e2d5c8';
             } else {
                 enBtn.style.fontWeight = '700'; enBtn.style.color = 'var(--color-primary)';
-                esBtn.style.fontWeight = '400'; esBtn.style.color = '#999';
+                esBtn.style.fontWeight = '400'; esBtn.style.color = '#e2d5c8';
             }
         }
 
@@ -895,17 +816,18 @@ a {
             console.log("MT: Updating UI with data", data);
             if (!data) return;
 
-            // Language switch
+            // Language switch init
             if (data.lang) {
-                applyLanguage(data.lang);
+                currentLang = data.lang;
             }
 
             // Title
             if (data.title) {
-                const navBrand = document.getElementById('nav-brand');
                 const heroTitle = document.getElementById('hero-title');
-                if (navBrand) navBrand.textContent = data.title;
-                if (heroTitle) heroTitle.textContent = data.title;
+                if (heroTitle) {
+                    heroTitle.setAttribute('data-en', data.title);
+                }
+                // NO actualizamos nav-brand con el texto para que NO sobreescriba nuestra etiqueta <img> del logo.
             }
 
             // Hero Buttons (Menutech CUID/RUID)
@@ -917,7 +839,7 @@ a {
                 const newOrdersBtn = document.createElement('menutech-orders');
                 newOrdersBtn.setAttribute('cuid', cuid);
                 newOrdersBtn.setAttribute('ruid', ruid);
-                newOrdersBtn.setAttribute('background', '#f2a04a');
+                newOrdersBtn.setAttribute('background', '#a0522d');
                 newOrdersBtn.setAttribute('color', '#ffffff');
                 newOrdersBtn.setAttribute('data-glf-cuid', cuid);
                 newOrdersBtn.setAttribute('data-glf-ruid', ruid);
@@ -932,7 +854,7 @@ a {
                     const newResBtn = document.createElement('menutech-reservations');
                     newResBtn.setAttribute('cuid', cuid);
                     newResBtn.setAttribute('ruid', ruid);
-                    newResBtn.setAttribute('background', '#2f4854');
+                    newResBtn.setAttribute('background', '#3e2723');
                     newResBtn.setAttribute('color', '#ffffff');
                     newResBtn.setAttribute('data-glf-cuid', cuid);
                     newResBtn.setAttribute('data-glf-ruid', ruid);
@@ -961,17 +883,28 @@ a {
                 const addressEl = document.getElementById('footer-address');
                 const hoursEl = document.getElementById('footer-hours');
 
-                if (phoneEl) phoneEl.textContent = (data.contact.phone ? (currentLang === 'es' ? 'Teléfono: ' : 'Phone: ') + data.contact.phone : '');
-                if (addressEl) addressEl.textContent = data.contact.address || '';
-                if (hoursEl) hoursEl.textContent = data.contact.hours || '';
+                if (phoneEl) {
+                    phoneEl.setAttribute('data-en', data.contact.phone ? 'Phone: ' + data.contact.phone : '');
+                    phoneEl.setAttribute('data-es', data.contact.phone ? 'Teléfono: ' + data.contact.phone : '');
+                }
+                if (addressEl) {
+                    addressEl.setAttribute('data-en', data.contact.address || '');
+                    addressEl.setAttribute('data-es', data.contact.address || '');
+                }
+                if (hoursEl) {
+                    const hrsEn = data.contact.hours || '';
+                    const hrsEs = hrsEn.replace(/Monday/g, 'Lunes').replace(/Tuesday/g, 'Martes').replace(/Wednesday/g, 'Miércoles').replace(/Thursday/g, 'Jueves').replace(/Friday/g, 'Viernes').replace(/Saturday/g, 'Sábado').replace(/Sunday/g, 'Domingo');
+                    hoursEl.setAttribute('data-en', hrsEn);
+                    hoursEl.setAttribute('data-es', hrsEs);
+                }
             }
 
-            // Socials
+            // Socials (Actualizado para mostrarse en línea sin romper el diseño)
             if (data.socials) {
                 const container = document.getElementById('social-icons');
                 if (container) {
                     container.innerHTML = data.socials.map(s => `
-                        <a href="${s.url}" target="_blank" style="color: #9a9a9a; transition: color 0.3s;" onmouseover="this.style.color='#d9a441'" onmouseout="this.style.color='#9a9a9a'">
+                        <a href="${s.url}" target="_blank" style="color: var(--color-primary); transition: color 0.3s; display: flex; align-items: center;" onmouseover="this.style.color='var(--color-primary-hover)'" onmouseout="this.style.color='var(--color-primary)'">
                             ${SOCIAL_ICONS[s.platform] || ''}
                         </a>
                     `).join('');
@@ -992,13 +925,14 @@ a {
             if (data.titles) {
                 Object.keys(data.titles).forEach(id => {
                     const el = document.getElementById(id);
-                    if (el) el.textContent = data.titles[id];
+                    if (el && data.titles[id]) {
+                        el.setAttribute('data-en', data.titles[id]);
+                    }
                 });
             }
 
             // Paragraphs
             if (data.paragraphs) {
-                // Section to elements mapping
                 const sectionMap = {
                     about: ['about-p1', 'about-p2', 'about-p3'],
                     promo: ['promo1-p1', 'promo1-p2', 'promo1-p3', 'promo1-p4', 'promo2-p1', 'promo2-p2', 'promo3-p1'],
@@ -1016,13 +950,13 @@ a {
                             const el = document.getElementById(id);
                             if (el) {
                                 const segment = segments[index] || "";
-                                el.textContent = segment;
-                                // Menutech: Hide element if segment is empty
+                                // Al recibir datos del editor, actualizamos la base del ingles.
+                                el.setAttribute('data-en', segment);
                                 el.style.display = segment.trim() === "" ? "none" : "";
                             }
                         });
 
-                        // Menutech: Also hide parent sections if all segments are empty
+                        // Ocultar tarjetas de promo enteras si no hay texto
                         if (sectionKey === 'promo') {
                             const p1 = document.getElementById('promo1-title')?.closest('.promo-card');
                             const p2 = document.getElementById('promo2-title')?.closest('.promo-card');
@@ -1035,6 +969,9 @@ a {
                     }
                 });
             }
+            
+            // Garantizar que la vista de idioma correcta se aplique AL FINAL de sobreescribir la UI
+            applyLanguage(currentLang);
         }
 
         // Listen for editor updates
@@ -1054,10 +991,12 @@ a {
             const enBtn = document.getElementById('lang-en');
             if (esBtn) esBtn.addEventListener('click', () => applyLanguage('es'));
             if (enBtn) enBtn.addEventListener('click', () => applyLanguage('en'));
+            
+            // Garantizamos que inicie en inglés por defecto basandonos en nuestro currentLang
+            applyLanguage(currentLang);
 
             // Click-to-Locate feature
             document.body.addEventListener('click', (e) => {
-                // Find nearest parent with an ID that we care about
                 let target = e.target;
                 while (target && target !== document.body) {
                     if (target.id && (
@@ -1085,107 +1024,96 @@ a {
         });
 
         // Navbar Toggle for Mobile
-const navbarToggler = document.getElementById('navbar-toggler');
-const navMenu = document.getElementById('nav-menu');
+        const navbarToggler = document.getElementById('navbar-toggler');
+        const navMenu = document.getElementById('nav-menu');
 
-navbarToggler.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    
-    // Animate hamburger icon
-    const icons = navbarToggler.querySelectorAll('.toggler-icon');
-    icons.forEach((icon, index) => {
-        if (navMenu.classList.contains('active')) {
-            if (index === 0) {
-                icon.style.transform = 'rotate(45deg) translate(5px, 5px)';
-            } else if (index === 1) {
-                icon.style.opacity = '0';
-            } else if (index === 2) {
-                icon.style.transform = 'rotate(-45deg) translate(5px, -5px)';
-            }
-        } else {
-            icon.style.transform = 'none';
-            icon.style.opacity = '1';
-        }
-    });
-});
-
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!navbarToggler.contains(e.target) && !navMenu.contains(e.target)) {
-        navMenu.classList.remove('active');
-        const icons = navbarToggler.querySelectorAll('.toggler-icon');
-        icons.forEach(icon => {
-            icon.style.transform = 'none';
-            icon.style.opacity = '1';
-        });
-    }
-});
-
-// Navbar scroll effect
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        navbar.style.padding = '10px 0';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
-    } else {
-        navbar.style.padding = '15px 0';
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    }
-});
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+        navbarToggler.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Animate hamburger icon
+            const icons = navbarToggler.querySelectorAll('.toggler-icon');
+            icons.forEach((icon, index) => {
+                if (navMenu.classList.contains('active')) {
+                    if (index === 0) {
+                        icon.style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    } else if (index === 1) {
+                        icon.style.opacity = '0';
+                    } else if (index === 2) {
+                        icon.style.transform = 'rotate(-45deg) translate(5px, -5px)';
+                    }
+                } else {
+                    icon.style.transform = 'none';
+                    icon.style.opacity = '1';
+                }
             });
-        }
-    });
-});
+        });
 
-// Intersection Observer for fade-in animations
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navbarToggler.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+                const icons = navbarToggler.querySelectorAll('.toggler-icon');
+                icons.forEach(icon => {
+                    icon.style.transform = 'none';
+                    icon.style.opacity = '1';
+                });
+            }
+        });
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
 
-// Add animation to sections
-document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(30px)';
-    section.style.transition = 'all 0.6s ease-out';
-    observer.observe(section);
-});
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.style.padding = '8px 0';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+            } else {
+                navbar.style.padding = '10px 0';
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
 
-// Hero section should be visible immediately
-document.querySelector('.hero').style.opacity = '1';
-document.querySelector('.hero').style.transform = 'translateY(0)';
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-// Button hover effects
-document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-2px)';
-    });
-    
-    btn.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-    });
-});
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Add animation to sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.6s ease-out';
+            observer.observe(section);
+        });
+
+        // Hero section should be visible immediately
+        document.querySelector('.hero').style.opacity = '1';
+        document.querySelector('.hero').style.transform = 'translateY(0)';
 
     </script>
 </body>
